@@ -1,5 +1,21 @@
 Application Communication protocol
 
+Web Service vs API
+
+Web Service :- SOAP, REST
+API (Application Program Interface) : - google API, FB API, etc
+
+Clearly, both are means of communications. 
+The difference is that Web Service almost always involves communication over network and HTTP is the most commonly used protocol. 
+Web service also uses SOAP, REST, and XML-RPC as a means of communication. 
+While an API can use any means of communication e.g. DLL files in C/C++, Jar files/ RMI in java, Interrupts in Linux kernel API etc. 
+So, you can say that-
+
+1. Web Service is an API wrapped in HTTP.
+2. All Web Services are API but all APIs are not Web Services.
+3. Web Service might not perform all the operations that an API would perform.
+4. A Web Service needs a network while an API doesn't need a network for its operation.
+
 SOAP (Simple Object Access protocol)
 -SOAP stands for Simple object access protocol
 -A XML Based messaging protocall
@@ -85,5 +101,7 @@ REST (REpresentational State Transfer)
 -Tranfer is just over HTTP
 -Easy to call From JavaScript.
 -Performance is great than SOAP.
+
+In Rest 
 
 REST vs RESTfull 
