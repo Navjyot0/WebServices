@@ -1,8 +1,12 @@
+Rerfernce of help links
+1. https://maxivak.com/rest-vs-xml-rpc-vs-soap/
+2. 
+
 Application Communication protocol
 
 Web Service vs API
 
-Web Service :- SOAP, REST
+Web Service :- SOAP, REST, XML-RCP
 API (Application Program Interface) : - google API, FB API, etc
 
 Clearly, both are means of communications. 
@@ -16,7 +20,16 @@ So, you can say that-
 3. Web Service might not perform all the operations that an API would perform.
 4. A Web Service needs a network while an API doesn't need a network for its operation.
 
-SOAP (Simple Object Access protocol)
+Web Service : 
+-Web Services are the key point of Integration for different applications belonging to different Platforms, Languages, systems.
+-
+
+1. XML-RPC (Extensible Markup Language - Remote Procedure Call)
+-Within the world of XML there are two main ways to implement a Remote Procedure Call (RPC) – XML-RPC and SOAP.
+-It’s remote procedure calling using HTTP as the transport and XML as the encoding. 
+-XML-RPC is designed to be as simple as possible, while allowing complex data structures to be transmitted, processed and returned.
+-
+2. SOAP (Simple Object Access protocol)
 -SOAP stands for Simple object access protocol
 -A XML Based messaging protocall
 -Used WSDL(Web Service Discription Language)(Which is why it becomes bulky but Secure)
@@ -93,15 +106,32 @@ SOAP Fault is linked to the 500 to 599 range of status codes.
 
 
 
-REST (REpresentational State Transfer)
+3. REST (REpresentational State Transfer)
+-Representational State Transfer or REST basically means that each unique URL is a representation of some object.
 -An Architectural protocol
--Uses XML, JSON for send recive
+- You can get the contents of that object using an HTTP GET, to delete it, you then might use a POST, PUT, or DELETE to modify the object (in practice most of the services use a POST for this).
+-It is not necessary to use XML as a data interchange format in REST.
+-The format of information(representation) returned can be in XML, JSON, plain text or even in HTML format.
+-REST architecture is basically focused on two things : Resources and Interface.
+-Resources are application’s state and functionality which is represented by a unique URL. The resources share a uniform interface to transfer the state between the client and server.
+-Uses XML, JSON for send/recive
 -Simply calls services via URL Path 
 -Results are readable which are just XML(Extensible Markup Language)/JSON(JavaScript Object Notation)
 -Tranfer is just over HTTP
 -Easy to call From JavaScript.
 -Performance is great than SOAP.
+-REST are not secure we need to make this secure.
+-This is light weight unlike SOAP
 
-In Rest 
+#REST vs SOAP
+#The main advantages of REST web services are:
+- Lightweight – not a lot of extra xml markup
+- Human Readable Results
+- Easy to build – no toolkits required
+
+#SOAP also has some advantages:
+- Easy to consume – sometimes
+- Rigid – type checking, adheres to a contract
+- Development tools
 
 REST vs RESTfull 
