@@ -1,10 +1,25 @@
 Rerfernce of help links
 1. https://maxivak.com/rest-vs-xml-rpc-vs-soap/
-2. 
+2. https://blogs.mulesoft.com/dev/api-dev/apis-versus-web-services/
+3. http://www.differencebetween.net/technology/internet/difference-between-api-and-web-service/
+4. 
 
 Application Communication protocol
 
 Web Service vs API
+
+Web Service:
+1) It is a SOAP-based service and returns data as XML.
+2) It only supports the HTTP protocol.
+3) It is not open source but can be used by any client that understands XML.
+5) It requires a SOAP protocol to receive and send data over the network, so it is not a light-weight architecture.
+
+Web API:
+1) A Web API is an HTTP based service and returns JSON or XML data by default.
+2) It supports the HTTP protocol.
+3) It can be hosted within an application or IIS.
+4) It is open source and it can be used by any client that understands JSON or XML.
+5) It is light-weight architectured and good for devices which have limited bandwidth, like mobile devices.
 
 Web Service :- SOAP, REST, XML-RCP
 API (Application Program Interface) : - google API, FB API, etc
@@ -20,9 +35,28 @@ So, you can say that-
 3. Web Service might not perform all the operations that an API would perform.
 4. A Web Service needs a network while an API doesn't need a network for its operation.
 
+#What is a web service?
+By definition, a web service is any piece of software that makes itself available over the Internet and standardizes its communication via XML encoding. A client invokes a web service by sending a request (usually in the form of an XML message), and the service sends back an XML response. Web services invoke communication over a network, with HTTP as the most common means of connectivity between the two systems. For many, web services are synonymous with SOA (Services Oriented Architecture) and primarily rely on standards such as XML-RPC and SOAP (Simple Object Access Protocol).  One of the primary criticisms of the web services approach is the degree to which the client and server are coupled to one another; an inherent issue whenever a client is remotely calling a procedure (“RPC”) on a distant system.
+
+#Why is a web API not a web service?
+In contrast, a typical Web API specifies how software components should interact with each other using the web’s protocol (HTTP) as the go-between. The client doesn’t need to know what procedure to call on the server. Instead, it uses a set of commands (called “verbs”) that are built into HTTP and when the command arrives on the other end, it’s up to the receiving system to know what to do with it. For example, the HTTP verb that’s typically used to retrieve data is “GET”.  When HTTP is used to abstract systems from one another, the systems are considered to be more loosely coupled (when compared to web services) and therefore the entire system is considered less brittle. Another advantage of web APIs (often referred to as RESTful APIs) is flexibility. The client system (usually called the “consumer”) and the serving system (the “provider”) are so independent of one another, that they can each use different languages (Java, Python, Ruby, etc.) for their part of the overall implementation. Additionally, the data payloads can be of multiple types such as JSON or XML. RESTful APIs most typically use the web’s  communication protocol (again, HTTP), but  are not limited in the same way a web service is. For example, CoAP, an HTTP-like protocol that’s common to the Internet of Things, is also considered to be RESTful.
+
+#What is an API?
+In contrast, an API specifies how software components should interact with each other. It is a set of protocols and routines, and it’s responses are generally returned as JSON or XML data. APIs can use any type of communication protocol, and are not limited in the same way a web service is.
+
+#What do APIs and web services have in common?
+Both web APIs and web services serve as a means of communication between consumers and providers. Both support XML-based data payloads, but JSON is the more common payload type for web APIs. When comparing web services to web APIs, the significance lies in the amount of work that has to be done by the consumers and providers to package and unpackage the data; this is a process known as serialization and deserialization, respectively. Serializing and deserializing JSON in a web API scenario typically requires far less work which, in turn, equates to better performance and fewer compute cycles. This is one reason why web APIs are great for information transfer on mobile devices and tablets; as opposed to on desktops and services, where they have restricted processing environments.
+Conversely, web services facilitate interactions between two systems, and almost always depend on an XML-RPC-like interface to communicate with each other. SOAP, the successor to XML-RPC, defines the XML-based exchange mentioned above and is more bound to a client/server architecture.
+In terms of what web APIs and web services have in common, both are essentially a means to an end and the same problems can be solved by both. And both can be configured to operate over a network or within a machine.But the approaches of each come with their own pros and cons.  
+For now, web services are a service from one device to another; they communicate over the Internet and are optimized for machine-to-machine communication, meaning that machine-readable files and formats (like XML) are easily transferable. APIs are software-to-software interfaces with an abstract set of verbs instructions for accessing web-based applications. Whatever you wanted to accomplish with a web API can be accomplished with a web service; web services are merely predecessors in the evolution of web integration methodologies.
+
+
+
 Web Service : 
 -Web Services are the key point of Integration for different applications belonging to different Platforms, Languages, systems.
 -
+
+
 
 1. XML-RPC (Extensible Markup Language - Remote Procedure Call)
 -Within the world of XML there are two main ways to implement a Remote Procedure Call (RPC) – XML-RPC and SOAP.
@@ -31,11 +65,11 @@ Web Service :
 -
 2. SOAP (Simple Object Access protocol)
 -SOAP stands for Simple object access protocol
--A XML Based messaging protocall
--Used WSDL(Web Service Discription Language)(Which is why it becomes bulky but Secure)
+-A XML Based messaging protocol
+-Used WSDL(Web Service Description Language)(Which is why it becomes bulky but Secure)
 -Invoke services by calling RPC(Remote Procedure Call) Method 
 -Does not return Human readable code
--Tranfer over HTTP, also uses other protocals SMPT, FTP, etc
+-Tranfer over HTTP, also uses other protocols SMPT, FTP, etc
 -Javascript can call SOAP but it is difuicult to implement
 -Performance is not great as compaired to REST.
 
@@ -102,14 +136,10 @@ Fault is an optional part of a SOAP message.
 For HTTP binding, a successful response is linked to the 200 to 299 range of status codes.
 SOAP Fault is linked to the 500 to 599 range of status codes.
 
-
-
-
-
 3. REST (REpresentational State Transfer)
 -Representational State Transfer or REST basically means that each unique URL is a representation of some object.
--An Architectural protocol
-- You can get the contents of that object using an HTTP GET, to delete it, you then might use a POST, PUT, or DELETE to modify the object (in practice most of the services use a POST for this).
+-It is An Architectural style not protocol
+-You can get the contents of that object using an HTTP GET, to delete it, you then might use a POST, PUT, or DELETE to modify the object (in practice most of the services use a POST for this).
 -It is not necessary to use XML as a data interchange format in REST.
 -The format of information(representation) returned can be in XML, JSON, plain text or even in HTML format.
 -REST architecture is basically focused on two things : Resources and Interface.
@@ -124,6 +154,12 @@ SOAP Fault is linked to the 500 to 599 range of status codes.
 -This is light weight unlike SOAP
 
 #REST vs SOAP
+
+SOAP : SOAP is a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. 
+
+REST : Representational State Transfer is a software architectural style that defines a set of constraints to be used for creating web services. Web services that conform to the REST architectural style, termed RESTful web services, provide interoperability between computer systems on the Internet. 
+
+
 #The main advantages of REST web services are:
 - Lightweight – not a lot of extra xml markup
 - Human Readable Results
@@ -135,3 +171,12 @@ SOAP Fault is linked to the 500 to 599 range of status codes.
 - Development tools
 
 REST vs RESTfull 
+-Representational state transfer (REST) is a style of software architecture. As described in a dissertation by Roy Fielding, REST is an "architectural style" that basically exploits the existing technology and protocols of the Web.
+-RESTful is typically used to refer to web services implementing such an architecture.
+-"REST" is an architectural paradigm. "RESTful" describes using that paradigm.
+
+#What is WSDL?
+WSDL is an XML format for describing network services as a set of endpoints operating on messages containing either document-oriented or procedure-oriented information. The operations and messages are described abstractly, and then bound to a concrete network protocol and message format to define an endpoint.
+
+SOAP messages are formatted in XML and are typically sent using HTTP (hypertext transfer protocol). SOAP uses WSDL for communication between consumer and provider, whereas REST just uses XML or JSON to send and receive data. ... SOAP builds an XML based protocol on top of HTTP or sometimes TCP/IP.
+
